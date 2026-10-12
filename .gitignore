@@ -1,0 +1,7 @@
+# Dependencies and tooling
+.qodo/
+.vscode/
+
+# System files
+.DS_Store
+Thumbs.db

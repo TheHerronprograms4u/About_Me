@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guess_Who_Harron_Is</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Harron Noah A. Melgar</h1>
+
+    <p>1st Year BSCS Student. Passionate about web development and programming, QlNDUyAxQQ==.</p>
+
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#hobbies">Hobbies</a></li>
+        <li><a href="#schedule">Schedule</a></li>
+        <li><a href="#favorites">Favorites</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <img src="images/Profile.jpg" alt="A picture of me from my Junior year" width="200">
+
+      <p>
+        Hello! My name is <strong>Harron Noah A. Melgar</strong>. I am a first-year BSCS
+        student at Bicol University. I chose Computer Science because I enjoy programming, 
+        creating innovative solutions, and exploring how technology can improve people's lives. 
+        I am particularly interested in software development, artificial intelligence, and building 
+        applications that solve real-world problems. Through this course, I hope to strengthen my 
+        programming skills, develop my problem-solving and critical-thinking abilities, and gain a 
+        deeper understanding of computer systems and emerging technologies. Ultimately, I want to 
+        use what I learn to create meaningful projects and develop solutions that can make a positive 
+        impact on society.
+      </p>
+
+      <!-- MY COMMENT 1: The <img> tag is used to display an image i privided a path with on the webpage. It has a source attribute (src) that specifies the path to the image file, and an alt attribute that provides alternative text for the image. -->
+    </section>
+
+    <!-- ------------- SECTION 2: HOBBIES AND GOALS ------------- -->
+    <section id="hobbies">
+      <h2>My Hobbies and Goals</h2>
+
+      <h3>Hobbies</h3>
+      <ul>
+        <li>Playing Chess</li>
+        <li>Programming</li>
+        <li>Reading Books</li>
+        <li>Playing Video Games</li>
+      </ul>
+
+      <h3>My Top 3 Goals</h3>
+      <ol>
+        <li>Become a Pilot</li>
+        <li>Be an AI Engineer</li>
+        <li>Make those whom I love Happy</li>
+      </ol>
+    </section>
+
+    <section id="schedule">
+      <h2>My Class Schedule</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Subject</th>
+            <th>Day</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CS 101: Introduction to Computing</td>
+            <td>M W</td>
+            <td>7:30 - 8:30</td>
+          </tr>
+          <tr>
+            <td>CS 102: Computer Programming 1</td>
+            <td>M W Th</td>
+            <td>9:00 - 11:30</td>
+          </tr>
+          <tr>
+            <td>Mathematical Analysis</td>
+            <td>T Th F</td>
+            <td>10:30 - 11:30 & 8:00 - 9:30 on fridays</td>
+          </tr>
+          <tr>
+            <td>Physics for Computing</td>
+            <td>T Th</td>
+            <td>9:00 - 10:00</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- MY COMMENT 2: <tr> represents a table row, <th> represents a header cell, and <td> represents a data cell just the same as the ones used in spreadsheets, but here they are coded and used differently but almost the same way to create a structured layout for the class schedule. -->
+    </section>
+
+    <section id="favorites">
+      <h2>My Favorites</h2>
+
+      <p>
+        One website I enjoy visiting is
+        <a href="https://chess.com" target="_blank" rel="noopener">Chess.com</a>
+        because it's a great place to play chess and improve my skills and aligned with my hobby, I like to oftenly visit this site to play with chess players all across the world.
+      </p>
+
+      <!-- MY COMMENT 3: href specifies the URL of the page the link goes to for example: https://chess.com the one I used above, when clicked, will navigate to that URL and in that case it will open the link in a new tab. -->
+    </section>
+
+    <section id="private-section" hidden>
+      <h2>Private Notes</h2>
+      <p>If mahanap mo po yaa sir within 2 days na mapasa ko may 10 pesos ka po ;)).</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <!-- TODO: Replace with your name and the year. -->
+    <p>Made by Harron Noah A. Melgar for CS 101, Bicol University.</p>
+
+    <details class="private-access">
+      <summary aria-label="Open private section">-->•</summary>
+      <form id="private-access-form">
+        <label for="private-password">Password</label>
+        <input id="private-password" type="password" required>
+        <button type="submit">Open</button>
+        <span id="password-message" role="status" aria-live="polite"></span>
+      </form>
+    </details>
+  </footer>
+
+  <script>
+    const sectionPassword = "BSCS 1A";
+    const accessForm = document.getElementById("private-access-form");
+    const passwordInput = document.getElementById("private-password");
+    const passwordMessage = document.getElementById("password-message");
+    const privateSection = document.getElementById("private-section");
+    const privateAccess = document.querySelector(".private-access");
+
+    accessForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      if (passwordInput.value !== sectionPassword) {
+        passwordMessage.textContent = "Incorrect password.";
+        passwordInput.select();
+        return;
+      }
+
+      privateSection.hidden = false;
+      privateAccess.open = false;
+      accessForm.reset();
+      passwordMessage.textContent = "";
+      privateSection.scrollIntoView({ behavior: "smooth" });
+    });
+  </script>
+
+</body>
+</html>
