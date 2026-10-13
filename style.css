@@ -2,9 +2,10 @@
   color-scheme: dark;
   --page: #101412;
   --surface: #151a17;
-  --text: #edf0e9;
-  --muted: #a5ada4;
-  --line: #303831;
+  --text: #a5b590;
+  --content: #bfcbbd;
+  --muted: #9fcc99;
+  --line: #7db084;
   --accent: #b8d99a;
   --content-width: 960px;
 }
@@ -24,7 +25,7 @@ body {
   margin: 0;
   background: var(--page);
   color: var(--text);
-  font-family: "Trebuchet MS", Verdana, sans-serif;
+  font-family: "Arial", Helvetica, sans-serif;
   font-size: 1rem;
   line-height: 1.75;
 }
@@ -40,7 +41,7 @@ header {
   padding: 68px max(24px, calc((100% - var(--content-width)) / 2)) 28px;
   border-bottom: 1px solid var(--line);
   background: #141916;
-  animation: arrive 650ms ease-out both;
+  animation: arrive 650ms ease-out both;  
 }
 
 header::before {
@@ -268,6 +269,10 @@ main h3 {
   max-width: 720px;
   margin: 0;
   color: #c9d0c8;
+}
+
+#favorites strong {
+  color: var(--text);
 }
 
 #favorites a {
